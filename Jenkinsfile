@@ -1,22 +1,25 @@
 pipeline {
   agent any
+  tools {nodejs "node"}
+    
   stages {
-
-    stage('Stage 1') {
+        
+    stage('Cloning Git') {
       steps {
-        script {
-          echo 'Stage 1'
-        }
+        git 'https://github.com/jehinerrodriguez/JenkinsRepo'
       }
     }
-
-    stage('Stage 2') {
+        
+    stage('Install dependencies') {
       steps {
-        script {
-          echo 'Stage 2'
-        }
+        sh 'npm install'
       }
     }
-
+     
+    stage('Test') {
+      steps {
+         sh './script/test'
+      }
+    }      
   }
 }
