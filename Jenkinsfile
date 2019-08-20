@@ -23,7 +23,7 @@ pipeline {
      
     stage('Test') {
       steps {
-         bat './script/test'
+         bat '.\script\test.sh'
       }
     }      
   }
