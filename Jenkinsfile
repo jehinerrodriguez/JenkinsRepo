@@ -23,8 +23,7 @@ pipeline {
      
     stage('Test') {
       steps {
-         #sh './script/test'
-		 echo "Testing"
+		    echo "Testing"
       }
     }      
   }
